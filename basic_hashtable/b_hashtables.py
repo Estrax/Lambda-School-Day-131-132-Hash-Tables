@@ -40,7 +40,10 @@ def hash_table_insert(hash_table, key, value):
     hashkey = hash(key, hash_table.capacity)
     if hash_table.storage[hashkey]:
         print("WARNING! Overwriting a key that exists")
-    hash_table.storage[hashkey] = Pair(key, value)
+        hash_table.storage[hashkey] = Pair(key, value)
+    else:
+        hash_table.storage[hashkey] = Pair(key, value)
+        hash_table.count += 1
 
 
 # '''
@@ -54,6 +57,7 @@ def hash_table_remove(hash_table, key):
         print("WARNING! Deleting a key that does not exist")
         return
     hash_table.storage[hashkey] = None
+    hash_table.count -= 1
 
 
 # '''
