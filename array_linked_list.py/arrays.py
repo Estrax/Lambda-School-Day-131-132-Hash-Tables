@@ -73,7 +73,6 @@ def array_remove(arr, value):
         i += 1
     else:
         raise Exception("Value not found error")
-    return None
 
 
 # Remove the element in a given position and return it
